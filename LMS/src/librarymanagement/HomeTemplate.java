@@ -80,10 +80,9 @@ public class HomeTemplate {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setUndecorated(true);
 
-        // Creating Background panel
-        JPanel p1 = new JPanel();
+        // Creating animated 3D background panel
+        JPanel p1 = new ThreeDBackgroundPanel();
         p1.setBounds(0, 0, 1200, 700);
-        p1.setBackground(Color.BLACK);
         p1.setLayout(null);
         f.add(p1);
 
