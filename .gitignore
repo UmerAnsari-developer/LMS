@@ -1,0 +1,11 @@
+*.class
+*.jar
+*.war
+*.ear
+bin/
+build/
+out/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
