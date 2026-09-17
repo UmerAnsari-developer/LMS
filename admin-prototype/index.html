@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="LMS library management system admin panel prototype" />
+  <title>LMS / Admin Command Center</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand-block">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <div><strong>LMS</strong><small>Library Management</small></div>
+        <button class="icon-btn sidebar-close" id="sidebarClose" aria-label="Close navigation">×</button>
+      </div>
+      <div class="workspace-switcher">
+        <div class="workspace-avatar">AU</div>
+        <div><strong>Admin workspace</strong><small>Central Library · 01</small></div>
+        <span class="status-dot"></span>
+      </div>
+      <nav class="nav" aria-label="Admin navigation">
+        <p class="nav-label">Command center</p>
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">⌂</span><span>Dashboard</span><kbd>01</kbd></button>
+        <p class="nav-label">Management</p>
+        <button class="nav-item has-children" data-page="users"><span class="nav-icon">♙</span><span>Users</span><i>⌄</i></button>
+        <div class="nav-children"><button data-page="students">Students <em>1,284</em></button><button data-page="librarians">Librarians <em>18</em></button></div>
+        <button class="nav-item has-children" data-page="books"><span class="nav-icon">▤</span><span>Books</span><i>⌄</i></button>
+        <div class="nav-children"><button data-page="books">Books <em>12,640</em></button><button data-page="categories">Categories <em>24</em></button><button data-page="authors">Authors <em>1,904</em></button><button data-page="publishers">Publishers <em>186</em></button></div>
+        <button class="nav-item has-children" data-page="transactions"><span class="nav-icon">⇄</span><span>Transactions</span><i>⌄</i><b class="alert-count">12</b></button>
+        <div class="nav-children"><button data-page="transactions">All transactions <em>8,492</em></button><button data-page="issued">Issued books <em>324</em></button><button data-page="returned">Returned books <em>211</em></button><button data-page="overdue">Overdue books <em class="danger-text">12</em></button><button data-page="renewals">Renewals <em>42</em></button></div>
+        <button class="nav-item has-children" data-page="reports"><span class="nav-icon">▥</span><span>Reports</span><i>⌄</i></button>
+        <div class="nav-children"><button data-page="reports">Book reports</button><button data-page="reports">User reports</button><button data-page="reports">Circulation reports</button><button data-page="reports">Overdue reports</button><button data-page="reports">Fine reports</button></div>
+        <p class="nav-label">Configuration</p>
+        <button class="nav-item has-children" data-page="settings"><span class="nav-icon">⚙</span><span>Settings</span><i>⌄</i></button>
+        <div class="nav-children"><button data-page="settings">Library information</button><button data-page="settings">Borrowing rules</button><button data-page="settings">Fine rules</button><button data-page="settings">System preferences</button></div>
+      </nav>
+      <div class="sidebar-bottom">
+        <button class="nav-item" data-page="profile"><span class="nav-icon">◉</span><span>Profile</span></button>
+        <div class="sidebar-help"><span>?</span><div><strong>Need a hand?</strong><small>Open admin guide</small></div><b>↗</b></div>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <header class="topbar">
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+        <div class="breadcrumb"><span>ADMIN</span><b>/</b><strong id="pageCrumb">DASHBOARD</strong></div>
+        <div class="top-actions">
+          <label class="search-box"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search anything..." /><kbd>⌘ K</kbd></label>
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">☼</button>
+          <button class="notification-btn" id="notificationBtn" aria-label="Notifications"><span>♢</span><i>3</i></button>
+          <div class="profile-chip"><div class="avatar">AM</div><div><strong>Alex Morgan</strong><small>Super admin</small></div><span>⌄</span></div>
+        </div>
+      </header>
+
+      <section class="page" id="page">
+        <div class="page-heading">
+          <div><p class="eyebrow">WEDNESDAY, 17 SEPTEMBER 2026 <span class="live-pill"><i></i> LIVE SYSTEM</span></p><h1>Good morning, Alex<span>.</span></h1><p class="subheading">Here’s what’s happening across your library today.</p></div>
+          <div class="heading-actions"><button class="btn btn-ghost" id="exportBtn"><span>↓</span> Export report</button><button class="btn btn-primary" id="quickActionBtn"><span>＋</span> Quick action</button></div>
+        </div>
+
+        <div class="metric-grid">
+          <article class="metric-card cyan"><div class="metric-top"><span class="metric-label">Total books</span><span class="metric-icon">▤</span></div><strong class="metric-value">12,640</strong><div class="metric-foot"><span class="trend up">↗ 8.4%</span><span>vs last month</span><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></article>
+          <article class="metric-card purple"><div class="metric-top"><span class="metric-label">Active members</span><span class="metric-icon">♙</span></div><strong class="metric-value">1,284</strong><div class="metric-foot"><span class="trend up">↗ 12.7%</span><span>vs last month</span><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></article>
+          <article class="metric-card amber"><div class="metric-top"><span class="metric-label">Books issued</span><span class="metric-icon">⇄</span></div><strong class="metric-value">324</strong><div class="metric-foot"><span class="trend up">↗ 5.2%</span><span>vs last month</span><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></article>
+          <article class="metric-card red"><div class="metric-top"><span class="metric-label">Overdue books</span><span class="metric-icon">!</span></div><strong class="metric-value">12</strong><div class="metric-foot"><span class="trend down">↘ 2.1%</span><span>vs last month</span><div class="sparkline"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div></article>
+        </div>
+
+        <div class="dashboard-grid">
+          <article class="panel circulation-panel"><div class="panel-header"><div><span class="panel-kicker">ACTIVITY OVERVIEW</span><h2>Circulation activity</h2></div><select id="rangeSelect"><option>Last 7 days</option><option>Last 30 days</option><option>Last 90 days</option></select></div><div class="chart-legend"><span><i class="legend-line cyan-line"></i> Issued <strong>1,849</strong></span><span><i class="legend-line purple-line"></i> Returned <strong>1,208</strong></span></div><div class="chart-wrap"><div class="y-axis"><span>400</span><span>300</span><span>200</span><span>100</span><span>0</span></div><div class="chart"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 700 230" preserveAspectRatio="none" aria-label="Circulation activity chart"><defs><linearGradient id="cyanFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#56deea" stop-opacity=".22"/><stop offset="1" stop-color="#56deea" stop-opacity="0"/></linearGradient><linearGradient id="purpleFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#9d86ff" stop-opacity=".14"/><stop offset="1" stop-color="#9d86ff" stop-opacity="0"/></linearGradient></defs><path class="area cyan-area" d="M0 168 C38 144, 55 160, 84 137 S132 150, 168 117 S215 133, 250 95 S300 126, 337 102 S390 72, 420 92 S470 75, 505 98 S548 69, 580 77 S633 43, 700 54 L700 230 L0 230Z"/><path class="area purple-area" d="M0 195 C40 190, 60 180, 90 188 S145 171, 175 185 S218 159, 252 170 S310 147, 345 165 S393 140, 420 151 S470 134, 510 144 S565 126, 600 139 S648 119, 700 128 L700 230 L0 230Z"/><path class="line cyan-stroke" d="M0 168 C38 144, 55 160, 84 137 S132 150, 168 117 S215 133, 250 95 S300 126, 337 102 S390 72, 420 92 S470 75, 505 98 S548 69, 580 77 S633 43, 700 54"/><path class="line purple-stroke" d="M0 195 C40 190, 60 180, 90 188 S145 171, 175 185 S218 159, 252 170 S310 147, 345 165 S393 140, 420 151 S470 134, 510 144 S565 126, 600 139 S648 119, 700 128"/></svg><div class="x-axis"><span>11 Sep</span><span>12 Sep</span><span>13 Sep</span><span>14 Sep</span><span>15 Sep</span><span>16 Sep</span><span>17 Sep</span></div></div></div></article>
+          <article class="panel quick-panel"><div class="panel-header"><div><span class="panel-kicker">SHORTCUTS</span><h2>Quick actions</h2></div><button class="more-btn">•••</button></div><div class="action-list"><button class="action-row" data-action="Add a new book"><span class="action-icon cyan-icon">＋</span><span><strong>Add a new book</strong><small>Register a new title in the catalog</small></span><b>→</b></button><button class="action-row" data-action="Register a user"><span class="action-icon purple-icon">♙</span><span><strong>Register a user</strong><small>Create a student or librarian account</small></span><b>→</b></button><button class="action-row" data-action="Issue a book"><span class="action-icon amber-icon">⇄</span><span><strong>Issue a book</strong><small>Start a new circulation transaction</small></span><b>→</b></button><button class="action-row" data-action="Generate report"><span class="action-icon red-icon">▥</span><span><strong>Generate report</strong><small>Build a custom library report</small></span><b>→</b></button></div></article>
+        </div>
+
+        <div class="lower-grid">
+          <article class="panel table-panel"><div class="panel-header"><div><span class="panel-kicker">REQUIRES ATTENTION</span><h2>Overdue books</h2></div><button class="text-btn" data-page="overdue">View all <span>→</span></button></div><div class="table-tools"><span>12 records</span><button class="filter-btn">☷ Filter</button></div><div class="table-scroll"><table><thead><tr><th>BOOK TITLE</th><th>MEMBER</th><th>DUE DATE</th><th>FINE</th><th>STATUS</th><th></th></tr></thead><tbody><tr><td><div class="book-cell"><span class="book-cover blue-cover">◈</span><div><strong>Atomic Habits</strong><small>James Clear · BK-10294</small></div></div></td><td><strong>Riya Shah</strong><small>STU-00841</small></td><td><strong>14 Sep 2026</strong><small class="danger-text">3 days overdue</small></td><td><strong>$4.50</strong></td><td><span class="status overdue">Overdue</span></td><td><button class="row-menu">•••</button></td></tr><tr><td><div class="book-cell"><span class="book-cover purple-cover">✦</span><div><strong>The Design of Everyday Things</strong><small>Don Norman · BK-08412</small></div></div></td><td><strong>Marcus Lee</strong><small>STU-00729</small></td><td><strong>15 Sep 2026</strong><small class="danger-text">2 days overdue</small></td><td><strong>$3.00</strong></td><td><span class="status overdue">Overdue</span></td><td><button class="row-menu">•••</button></td></tr><tr><td><div class="book-cell"><span class="book-cover amber-cover">◎</span><div><strong>Clean Code</strong><small>Robert C. Martin · BK-11028</small></div></div></td><td><strong>Sofia Patel</strong><small>STU-00618</small></td><td><strong>16 Sep 2026</strong><small class="danger-text">1 day overdue</small></td><td><strong>$1.50</strong></td><td><span class="status reminder">Reminder sent</span></td><td><button class="row-menu">•••</button></td></tr></tbody></table></div></article>
+          <article class="panel health-panel"><div class="panel-header"><div><span class="panel-kicker">SYSTEM PULSE</span><h2>Library health</h2></div><span class="health-score">92%</span></div><div class="health-ring"><div><strong>Excellent</strong><small>All systems operational</small></div></div><div class="health-list"><div><span><i class="health-dot green"></i>Catalog database</span><strong>99.9%</strong></div><div><span><i class="health-dot green"></i>Circulation service</span><strong>99.8%</strong></div><div><span><i class="health-dot amber"></i>Backup status</span><strong>Today, 02:00</strong></div></div><button class="btn btn-outline full-btn">View system status <span>→</span></button></article>
+        </div>
+        <footer class="page-footer"><span>LMS Admin Console v2.4.0</span><span><i class="health-dot green"></i> Last synced 2 min ago</span></footer>
+      </section>
+    </main>
+  </div>
+  <div class="toast" id="toast"><span>✓</span><div><strong>Action completed</strong><small id="toastText">Your changes have been saved.</small></div></div>
+  <div class="modal-backdrop" id="modalBackdrop"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose">×</button><span class="modal-eyebrow">QUICK ACTION</span><h2 id="modalTitle">Start an operation</h2><p id="modalDescription">Choose an administrative task to continue.</p><div class="modal-actions"><button class="btn btn-ghost" id="modalCancel">Cancel</button><button class="btn btn-primary" id="modalConfirm">Continue →</button></div></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
